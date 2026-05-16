@@ -1,6 +1,6 @@
 # embyProxy
 
-一个基于 `snippets.js` 的 Emby/Jellyfin 反向代理 Worker 脚本，支持多上游别名访问、响应 URL 重写、流媒体直通与动态上游签名代理。
+一个基于 `snippets.js` 的 Emby/Jellyfin 反向代理 Worker / Snippets 脚本，支持多上游别名访问、响应 URL 重写、流媒体直通与动态上游签名代理。
 
 ## 功能概览
 
