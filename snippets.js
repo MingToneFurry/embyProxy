@@ -1,10 +1,11 @@
 const CONFIG = {
-	PUBLIC_ORIGIN: "", // 改成你自己的反代域名（示例：https://emby.example.com）
+	PUBLIC_ORIGIN: "", // 必填：改成你自己的反代域名（示例：https://emby.example.com）
 	PROXY_PREFIX: "/emby",
 	SIGNING_SECRET: "", // 改成你自己的随机字符串（务必不要留空）
 	SIGNING_TTL_SECONDS: 24 * 60 * 60,
 	SIGNING_CLOCK_SKEW_SECONDS: 5 * 60,
 	BACKENDS: {
+		// 必填：至少配置一个后端，否则 /emby/{alias} 会返回 Unknown backend
 		// 上游映射：alias -> upstream
 		// 示例（按需取消注释后修改）：
 		// example: { upstream: "https://emby.example.com/emby" },

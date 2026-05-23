@@ -1,6 +1,6 @@
 # embyProxy
 
-一个基于 `snippets.js` 的 Emby/Jellyfin 反向代理脚本，支持多上游别名访问、响应 URL 重写、流媒体直通与动态上游签名代理。推荐优先部署到 **Cloudflare Snippets**。
+一个基于 `snippets.js` 的 Emby/Jellyfin 反向代理脚本，支持多上游别名访问、响应 URL 重写、流媒体直通与动态上游签名代理。推荐优先部署到 **Cloudflare Snippets**（常见场景下请求额度更宽松、链路更稳定）。
 
 ## 功能概览
 
