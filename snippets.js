@@ -1,27 +1,10 @@
 const CONFIG = {
-	PUBLIC_ORIGIN: "https://emby.726748.xyz",        //改成你自己的反代域名
+	PUBLIC_ORIGIN: "",        //改成你自己的反代域名
 	PROXY_PREFIX: "/emby",
 	SIGNING_SECRET: "",	//改成你自己的随机字符串
 	SIGNING_TTL_SECONDS: 24 * 60 * 60,
 	SIGNING_CLOCK_SKEW_SECONDS: 5 * 60,
-	BACKENDS: {	//上游
-		/*示例：
-		xxx(名称):{
-			upstream:"上游路径，带后缀，比如：https://emby.726748.xyz/emby"
-		}(支持多上游)
-		
-		客户端配置：
-		
-		你自己的反代域名/emby/上游名称
-		
-		*/
-		example:{
-			upstream: "https://emby.example.com/emby"	//此示例中，客户端写: https://emby.726748.xyz/emby/example
-		},//无需多上游删除此处逗号和后面exampe2
-		example2:{
-			upstream: "https://emby2.example.com/emby"	//此示例中，客户端写: https://emby.726748.xyz/emby/example2
-		}
-	}
+	BACKENDS: {}	//上游
 };
 const INTERNAL_DYNAMIC_SEGMENT = "__proxy";
 const SIGN_TS_PARAM = "__px_ts";
