@@ -2,6 +2,8 @@
 
 一个基于 `snippets.js` 的 Emby/Jellyfin 反向代理 Worker / Snippets 脚本，支持多上游别名访问、响应 URL 重写、流媒体直通与动态上游签名代理。
 
+求 Star!
+
 ## 功能概览
 
 - 多上游别名代理：通过 `BACKENDS` 配置多个上游，按别名访问。
@@ -11,6 +13,7 @@
 - 响应重写：自动重写 `Location`、`Content-Location`、`Refresh`、`Set-Cookie` 以及 JSON/文本中的 API 路径与 URL。
 - 动态上游签名：对动态代理路径附加并校验 HMAC 签名参数，降低滥用风险。
 - 缓存策略：静态资源短期缓存；认证、会话、播放等敏感接口强制 `no-store`。
+- 多推流域名支持：自动识别处理emby的不同推流域名，实现无缝高速访问而无需繁琐的抓包配置
 
 ## 文件说明
 
@@ -67,6 +70,13 @@ https://emby.your-domain.com/emby/example2
 2. 将 `snippets.js` 内容粘贴为 Worker 脚本。
 3. 按需修改 `CONFIG`（尤其是 `PUBLIC_ORIGIN`、`SIGNING_SECRET`、`BACKENDS`）。
 4. 绑定自定义域名并验证访问。
+
+## 部署建议（Cloudflare Snippets） **推荐**
+
+1. 在 Cloudflare 你自己的某个域名->规则->Snippets处 创建 Snippets。(部分域名的免费套餐有权限，付费套餐一定会有) （使用Cloudflare Snippets的好处是不限制请求量，坏处是限制太严格但是这个脚本能够实现大多数的功能！）
+2. 将 `snippets.js` 内容粘贴为 Snippets 脚本。
+3. 按需修改 `CONFIG`（尤其是 `PUBLIC_ORIGIN`、`SIGNING_SECRET`、`BACKENDS`）。
+4. 配置规则并验证访问。
 
 ## 安全建议
 
