@@ -1,10 +1,17 @@
 const CONFIG = {
-	PUBLIC_ORIGIN: "",        //改成你自己的反代域名
+	PUBLIC_ORIGIN: "", // 改成你自己的反代域名（示例：https://emby.example.com）
 	PROXY_PREFIX: "/emby",
-	SIGNING_SECRET: "",	//改成你自己的随机字符串
+	SIGNING_SECRET: "", // 改成你自己的随机字符串（务必不要留空）
 	SIGNING_TTL_SECONDS: 24 * 60 * 60,
 	SIGNING_CLOCK_SKEW_SECONDS: 5 * 60,
-	BACKENDS: {}	//上游
+	BACKENDS: {
+		// 上游映射：alias -> upstream
+		// 示例（按需取消注释后修改）：
+		// example: { upstream: "https://emby.example.com/emby" },
+		// example2: { upstream: "https://emby2.example.com/emby" }
+		// 客户端地址示例：
+		// https://你的域名/emby/example
+	}
 };
 const INTERNAL_DYNAMIC_SEGMENT = "__proxy";
 const SIGN_TS_PARAM = "__px_ts";
